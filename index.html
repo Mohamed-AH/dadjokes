@@ -3,15 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dad Joke Generator</title>
+    <title>Dad Joke Generator - Groan-worthy humor at your fingertips</title>
+    <meta name="description" content="Get your daily dose of dad jokes with our Dad Joke Generator. Share laughter with friends and family using our vast collection of groan-worthy humor.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://djokes.netlify.app">
 </head>
 <body>
-    <div class="container">
+    <div class="container" role="main">
         <h1>Dad Joke Generator</h1>
-        <div id="joke-display">Your dad joke will appear here!</div>
-        <button id="generate-btn">Generate Dad Joke</button>
-        <button id="share-btn">Share on Twitter</button>
+        <button id="get-joke" aria-label="Get a random dad joke"><i class="fas fa-laugh-beam" aria-hidden="true"></i> Get Joke</button>
+        <p id="joke-display" aria-live="polite"></p>
+        <button id="share-twitter" style="display: none;" aria-label="Share joke on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i> Share on Twitter</button>
+        <div class="buttons">
+            <button id="settings-btn" aria-label="Open settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
+            <button id="about-btn" aria-label="Open about section"><i class="fas fa-question" aria-hidden="true"></i></button>
+        </div>
+    </div>
+    <div id="settings-modal" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-labelledby="settings-title">
+            <h2 id="settings-title">Color Scheme</h2>
+            <label for="color-scheme">Choose a color scheme:</label>
+            <select id="color-scheme">
+                <option value="default">Default</option>
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+            </select>
+            <button id="save-settings">Save</button>
+        </div>
+    </div>
+    <div id="about-modal" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-labelledby="about-title">
+            <h2 id="about-title">About Dad Joke Generator</h2>
+            <p>Welcome to the Dad Joke Generator! This app delivers a daily dose of groan-worthy humor.</p>
+            <p>Features:</p>
+            <ul>
+                <li>Random dad jokes at the click of a button</li>
+                <li>Share your favorite jokes on Twitter</li>
+                <li>Customizable color scheme</li>
+            </ul>
+            <p>Stack: HTML, CSS, JavaScript, and Google Sheets as a simple backend.</p>
+            <p>To add more dad jokes, please send them to <a href="https://x.com/mohamed_jeddah" target="_blank" rel="noopener noreferrer">@mohamed_jeddah on X</a>.</p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
