@@ -112,13 +112,27 @@ function saveSettings() {
 
 function applyColorScheme(scheme) {
     document.body.className = scheme + '-theme';
+    
+    // Apply gradient based on the theme
+    if (scheme === 'dark') {
+        document.body.style.background = 'linear-gradient(135deg, #121212 0%, #1e1e1e 100%)';
+    } else if (scheme === 'light') {
+        document.body.style.background = 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)';
+    } else {
+        // Default theme
+        document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+    }
 }
+
 
 // Load saved color scheme
 const savedScheme = localStorage.getItem('colorScheme');
 if (savedScheme) {
     colorSchemeSelect.value = savedScheme;
     applyColorScheme(savedScheme);
+} else {
+    // If no saved scheme, apply default
+    applyColorScheme('default');
 }
 
 // Initially disable the Get Joke button until jokes are loaded
