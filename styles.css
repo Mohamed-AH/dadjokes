@@ -2,7 +2,11 @@
     --primary-color: #667eea;
     --secondary-color: #764ba2;
     --background-color: #f0f0f0;
+    --container-background: rgba(255, 255, 255, 0.9);
     --text-color: #333;
+    --input-background: #ffffff;
+    --input-text: #333;
+    --button-text: #ffffff;
 }
 
 body {
@@ -12,14 +16,14 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
 }
 
 .container {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--container-background);
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -43,7 +47,7 @@ button {
     font-size: 16px;
     cursor: pointer;
     background-color: var(--primary-color);
-    color: white;
+    color: var(--button-text);
     border: none;
     border-radius: 25px;
     transition: all 0.3s ease;
@@ -108,10 +112,10 @@ button:disabled:hover, button:disabled:focus {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: var(--background-color);
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid var(--text-color);
     width: 80%;
     max-width: 500px;
     border-radius: 15px;
@@ -123,7 +127,7 @@ select, #save-settings {
 }
 
 #mc_embed_signup {
-    background: var(--background-color);
+    background-color: var(--container-background);
     clear: left;
     font: 14px Helvetica, Arial, sans-serif;
     max-width: 600px;
@@ -150,18 +154,20 @@ select, #save-settings {
 }
 
 #mc_embed_signup .mc-field-group input {
-    border: 1px solid #ABB0B2;
+    border: 1px solid var(--text-color);
     border-radius: 3px;
     padding: 8px 0;
     text-indent: 2%;
     width: 100%;
+    background-color: var(--input-background);
+    color: var(--input-text);
 }
 
 #mc_embed_signup .button {
     background-color: var(--primary-color);
     border: 0 none;
     border-radius: 4px;
-    color: #FFFFFF;
+    color: var(--button-text);
     cursor: pointer;
     font-size: 15px;
     height: 32px;
@@ -178,6 +184,45 @@ select, #save-settings {
 
 #mc_embed_signup .button:hover {
     background-color: var(--secondary-color);
+}
+
+#mc_embed_signup label, 
+#mc_embed_signup .indicates-required {
+    color: var(--text-color);
+}
+
+/* ... (keep the rest of the CSS the same) ... */
+
+.dark-theme {
+    --primary-color: #bb86fc;
+    --secondary-color: #3700b3;
+    --background-color: #121212;
+    --container-background: rgba(255, 255, 255, 0.05);
+    --text-color: #e0e0e0;
+    --input-background: #2c2c2c;
+    --input-text: #e0e0e0;
+    --button-text: #ffffff;
+}
+
+/* ... (keep the rest of the CSS the same) ... */
+
+.light-theme {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --background-color: #ecf0f1;
+    --container-background: rgba(255, 255, 255, 0.9);
+    --text-color: #2c3e50;
+    --input-background: #ffffff;
+    --input-text: #2c3e50;
+    --button-text: #ffffff;
+}
+
+a {
+    color: var(--primary-color);
+}
+
+.dark-theme a {
+    color: #74b9ff;
 }
 
 @media (max-width: 600px) {
@@ -197,20 +242,6 @@ select, #save-settings {
     #joke-display {
         font-size: 16px;
     }
-}
-
-.dark-theme {
-    --primary-color: #2c3e50;
-    --secondary-color: #34495e;
-    --background-color: #1a1a1a;
-    --text-color: #f0f0f0;
-}
-
-.light-theme {
-    --primary-color: #3498db;
-    --secondary-color: #2980b9;
-    --background-color: #ecf0f1;
-    --text-color: #2c3e50;
 }
 
 .visually-hidden {
